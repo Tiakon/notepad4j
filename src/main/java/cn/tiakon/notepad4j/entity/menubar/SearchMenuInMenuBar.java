@@ -2,23 +2,26 @@ package cn.tiakon.notepad4j.entity.menubar;
 
 import java.awt.*;
 
-public class AnalysisMenuInMenuBar {
-    private final Menu analysisMenu;
+public class SearchMenuInMenuBar {
+    private final Menu searchMenu;
 
-    public AnalysisMenuInMenuBar() {
-        this.analysisMenu = new Menu("分析");
-        MenuItem websiteItem = new MenuItem("Notepad4j 官方主页");
-        MenuItem projectItem = new MenuItem("Notepad4j 项目主页");
-        MenuItem updateItem = new MenuItem("升级 Notepad4j");
-        MenuItem aboutItem = new MenuItem("关于 Notepad4j");
+    public SearchMenuInMenuBar() {
+        this.searchMenu = new Menu("搜索");
+        MenuItem findItem = new MenuItem("查找");
+        MenuItem nextItem = new MenuItem("查找下一个");
+        MenuItem previousItem = new MenuItem("查找上一个");
+        MenuItem replaceItem = new MenuItem("替换");
+        MenuItem grepItem = new MenuItem("过滤");
 
-        analysisMenu.add(websiteItem);
-        analysisMenu.add(projectItem);
-        analysisMenu.add(updateItem);
-        analysisMenu.add(aboutItem);
+        searchMenu.add(findItem);
+        searchMenu.add(nextItem);
+        searchMenu.add(previousItem);
+        searchMenu.add(findItem);
+        searchMenu.add(replaceItem);
+        searchMenu.add(grepItem);
     }
 
-    public Menu getAnalysisMenu() {
-        return analysisMenu;
+    public Menu getMenu() {
+        return searchMenu;
     }
 }
