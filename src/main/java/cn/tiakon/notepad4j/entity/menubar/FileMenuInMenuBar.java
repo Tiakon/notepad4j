@@ -1,30 +1,31 @@
 package cn.tiakon.notepad4j.entity.menubar;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 
 public class FileMenuInMenuBar {
-    private final Menu fileMenu;
+    private final JMenu fileMenu;
     private final FileDialog fd1;
     private final FileDialog fd2;
-    private final TextArea textArea;
+    private final JTextArea textArea;
 
-    public FileMenuInMenuBar(Frame frame, TextArea textArea) {
+    public FileMenuInMenuBar(JFrame frame, JTextArea textArea) {
         this.textArea = textArea;
         this.fd1 = new FileDialog(frame, "选择需要加载的文件", FileDialog.LOAD);
         this.fd2 = new FileDialog(frame, "选择需要保存的文件", FileDialog.SAVE);
-        this.fileMenu = new Menu("文件");
+        this.fileMenu = new JMenu("文件");
 
-        MenuItem newItem = new MenuItem("新建");
-        MenuItem openItem = new MenuItem("打开");
+        JMenuItem newItem = new JMenuItem("新建");
+        JMenuItem openItem = new JMenuItem("打开");
         openItem.addActionListener(getActionListenerForOpenItem());
 
-        MenuItem saveItem = new MenuItem("保存");
+        JMenuItem saveItem = new JMenuItem("保存");
         saveItem.addActionListener(getActionListenerForSaveItem());
-        MenuItem saveAsItem = new MenuItem("另存为");
-        MenuItem exitItem = new MenuItem("退出");
+        JMenuItem saveAsItem = new JMenuItem("另存为");
+        JMenuItem exitItem = new JMenuItem("退出");
         exitItem.addActionListener(getActionListenerForExitItem());
 
         fileMenu.add(newItem);
@@ -96,7 +97,7 @@ public class FileMenuInMenuBar {
         };
     }
 
-    public Menu getMenu() {
+    public JMenu getMenu() {
         return fileMenu;
     }
 }

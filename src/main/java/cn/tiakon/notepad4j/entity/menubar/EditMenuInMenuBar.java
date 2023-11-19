@@ -1,25 +1,25 @@
 package cn.tiakon.notepad4j.entity.menubar;
 
-import java.awt.*;
+import javax.swing.*;
 
 public class EditMenuInMenuBar {
-    private final Menu editMenu;
-    public EditMenuInMenuBar(Frame frame, TextArea textArea) {
-        this.editMenu = new Menu("编辑");
-        MenuItem undoItem = new MenuItem("撤销");
-        MenuItem cutItem = new MenuItem("剪切");
-        MenuItem copyItem = new MenuItem("复制");
-        MenuItem pasteItem = new MenuItem("粘贴");
-        MenuItem deleteItem = new MenuItem("删除");
-        MenuItem selectAllItem = new MenuItem("全选");
+    private final JMenu editMenu;
+    public EditMenuInMenuBar(JFrame frame, JTextArea textArea) {
+        this.editMenu = new JMenu("编辑");
+        JMenuItem undoItem = new JMenuItem("撤销");
+        JMenuItem cutItem = new JMenuItem("剪切");
+        JMenuItem copyItem = new JMenuItem("复制");
+        JMenuItem pasteItem = new JMenuItem("粘贴");
+        JMenuItem deleteItem = new JMenuItem("删除");
+        JMenuItem selectAllItem = new JMenuItem("全选");
 
-        MenuItem changeCaseItem = new MenuItem("转换大小写");
-        MenuItem lineOperationsItem = new MenuItem("行操作");
-        MenuItem multiLineMergerItem = new MenuItem("多行合并");
-        MenuItem multiLineEditItem = new MenuItem("多行编辑");
-        MenuItem setOnlyReadItem = new MenuItem("设为只读");
+        JMenuItem changeCaseItem = new JMenuItem("转换大小写");
+        JMenuItem lineOperationsItem = new JMenuItem("行操作");
+        JMenuItem multiLineMergerItem = new JMenuItem("多行合并");
+        JMenuItem multiLineEditItem = new JMenuItem("多行编辑");
+        JMenuItem setOnlyReadItem = new JMenuItem("设为只读");
 
-        MenuItem insertDateItem = new MenuItem("插入日期");
+        JMenuItem insertDateItem = new JMenuItem("插入日期");
 
         editMenu.add(undoItem);
         editMenu.add(cutItem);
@@ -36,21 +36,21 @@ public class EditMenuInMenuBar {
 
         editMenu.add(insertDateItem);
 
-        Menu formatMenuInEditMenu = new Menu("格式");
-        CheckboxMenuItem autoWrap = new CheckboxMenuItem("自动换行");
-        MenuItem commentItem = new MenuItem("注释");
-        MenuItem uncommentItem = new MenuItem("取消注释");
+        JMenu formatMenuInEditMenu = new JMenu("格式");
+        JCheckBoxMenuItem autoWrap = new JCheckBoxMenuItem("自动换行");
+        JMenuItem commentItem = new JMenuItem("注释");
+        JMenuItem uncommentItem = new JMenuItem("取消注释");
 
         formatMenuInEditMenu.add(autoWrap);
         formatMenuInEditMenu.add(commentItem);
         formatMenuInEditMenu.add(uncommentItem);
 
         //将格式化菜单添加到编辑菜单中，作为二级菜单
-        editMenu.add(new MenuItem("-"));
+        editMenu.add(new JMenuItem("-"));
         editMenu.add(formatMenuInEditMenu);
     }
 
-    public Menu getMenu() {
+    public JMenu getMenu() {
         return editMenu;
     }
 }

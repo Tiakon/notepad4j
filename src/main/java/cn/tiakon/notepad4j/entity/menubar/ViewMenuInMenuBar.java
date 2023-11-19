@@ -1,20 +1,20 @@
 package cn.tiakon.notepad4j.entity.menubar;
 
-import java.awt.*;
+import javax.swing.*;
 
 public class ViewMenuInMenuBar {
-    private final Menu viewMenu;
+    private final JMenu viewMenu;
 
     public ViewMenuInMenuBar() {
-        this.viewMenu = new Menu("查看");
-        CheckboxMenuItem autoWrap = new CheckboxMenuItem("自动换行");
-        MenuItem fontItem = new MenuItem("字体");
+        JCheckBoxMenuItem autoWrap = new JCheckBoxMenuItem("自动换行");
+        JMenuItem fontItem = new JMenuItem("字体");
 
+        viewMenu = new JMenu("查看");
         viewMenu.add(autoWrap);
         viewMenu.add(fontItem);
     }
 
-    public Menu getMenu() {
+    public JMenu getMenu() {
         return viewMenu;
     }
 }

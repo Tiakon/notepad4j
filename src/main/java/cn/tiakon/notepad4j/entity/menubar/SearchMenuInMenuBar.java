@@ -1,17 +1,17 @@
 package cn.tiakon.notepad4j.entity.menubar;
 
-import java.awt.*;
+import javax.swing.*;
 
 public class SearchMenuInMenuBar {
-    private final Menu searchMenu;
+    private final JMenu searchMenu;
 
     public SearchMenuInMenuBar() {
-        this.searchMenu = new Menu("搜索");
-        MenuItem findItem = new MenuItem("查找");
-        MenuItem nextItem = new MenuItem("查找下一个");
-        MenuItem previousItem = new MenuItem("查找上一个");
-        MenuItem replaceItem = new MenuItem("替换");
-        MenuItem grepItem = new MenuItem("过滤");
+        this.searchMenu = new JMenu("搜索");
+        JMenuItem findItem = new JMenuItem("查找");
+        JMenuItem nextItem = new JMenuItem("查找下一个");
+        JMenuItem previousItem = new JMenuItem("查找上一个");
+        JMenuItem replaceItem = new JMenuItem("替换");
+        JMenuItem grepItem = new JMenuItem("过滤");
 
         searchMenu.add(findItem);
         searchMenu.add(nextItem);
@@ -21,7 +21,7 @@ public class SearchMenuInMenuBar {
         searchMenu.add(grepItem);
     }
 
-    public Menu getMenu() {
+    public JMenu getMenu() {
         return searchMenu;
     }
 }
