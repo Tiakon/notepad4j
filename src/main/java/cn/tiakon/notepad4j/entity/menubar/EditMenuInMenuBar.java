@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class EditMenuInMenuBar {
     private final JMenu editMenu;
-    public EditMenuInMenuBar(JFrame frame, JTextArea textArea) {
+    public EditMenuInMenuBar(JFrame frame) {
         this.editMenu = new JMenu("编辑");
         JMenuItem undoItem = new JMenuItem("撤销");
         JMenuItem cutItem = new JMenuItem("剪切");
