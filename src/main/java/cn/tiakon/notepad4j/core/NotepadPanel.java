@@ -8,11 +8,9 @@ import java.awt.*;
 public class NotepadPanel extends Panel {
 
     public NotepadPanel() {
-
         final TextAreaLayout textAreaLayout = new TextAreaLayout();
         setLayout(textAreaLayout);
         setBounds(0, 0, 800, 1000);
-
     }
 
     @Override

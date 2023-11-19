@@ -6,9 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 
 public class FileMenuInMenuBar {
-
     private final Menu fileMenu;
-
     private final FileDialog fd1;
     private final FileDialog fd2;
     private final TextArea textArea;
@@ -17,11 +15,9 @@ public class FileMenuInMenuBar {
         this.textArea = textArea;
         this.fd1 = new FileDialog(frame, "选择需要加载的文件", FileDialog.LOAD);
         this.fd2 = new FileDialog(frame, "选择需要保存的文件", FileDialog.SAVE);
-
         this.fileMenu = new Menu("文件");
 
         MenuItem newItem = new MenuItem("新建");
-
         MenuItem openItem = new MenuItem("打开");
         openItem.addActionListener(getActionListenerForOpenItem());
 

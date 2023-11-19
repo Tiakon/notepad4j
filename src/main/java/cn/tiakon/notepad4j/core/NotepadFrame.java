@@ -1,7 +1,7 @@
 package cn.tiakon.notepad4j.core;
 
 import cn.tiakon.notepad4j.entity.ColorSets;
-import cn.tiakon.notepad4j.entity.LableTextArea;
+import cn.tiakon.notepad4j.entity.LabelTextArea;
 import cn.tiakon.notepad4j.entity.menubar.*;
 
 import java.awt.*;
@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.Optional;
 
 /**
- * -Dfile.encoding=gbk
+ * -Dfile.encoding=utf-8
  *  todo: 1. 支持打开多文件，多文件名标签切换
  *  todo: 2. 记录记事本大小，位置
  *
@@ -20,15 +20,11 @@ public class NotepadFrame extends Frame {
 
     public NotepadFrame(String title) throws HeadlessException {
         super(title);
-
         NotepadPanel panel = new NotepadPanel();
-
-        final LableTextArea lableTextArea = new LableTextArea(panel);
-        final TextArea textArea = lableTextArea.getTextArea();
-
+        final LabelTextArea labelTextArea = new LabelTextArea(panel);
+        final TextArea textArea = labelTextArea.getTextArea();
         this.setMenuBar(createMenuBar(textArea));
         this.setBackground(ColorSets.FRAME_BG);
-
         this.add(panel);
         this.addWindowListener(getWindowListener());
         this.addComponentListener(getComponentListener(this, panel));
@@ -49,57 +45,47 @@ public class NotepadFrame extends Frame {
                 super.windowOpened(e);
                 System.out.println("windowOpened...");
             }
-
-
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
                 System.out.println("windowClosing...");
                 System.exit(0);
             }
-
             @Override
             public void windowClosed(WindowEvent e) {
                 super.windowClosed(e);
                 System.out.println("windowClosed...");
             }
-
             @Override
             public void windowIconified(WindowEvent e) {
                 super.windowIconified(e);
                 System.out.println("windowIconified...");
             }
-
             @Override
             public void windowDeiconified(WindowEvent e) {
                 super.windowDeiconified(e);
                 System.out.println("windowDeiconified...");
             }
-
             @Override
             public void windowActivated(WindowEvent e) {
                 super.windowActivated(e);
                 System.out.println("windowActivated...");
             }
-
             @Override
             public void windowDeactivated(WindowEvent e) {
                 super.windowDeactivated(e);
                 System.out.println("windowDeactivated...");
             }
-
             @Override
             public void windowGainedFocus(WindowEvent e) {
                 super.windowGainedFocus(e);
                 System.out.println("windowGainedFocus...");
             }
-
             @Override
             public void windowLostFocus(WindowEvent e) {
                 super.windowLostFocus(e);
                 System.out.println("windowLostFocus...");
             }
-
             @Override
             public void windowStateChanged(WindowEvent e) {
                 super.windowStateChanged(e);

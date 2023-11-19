@@ -2,12 +2,12 @@ package cn.tiakon.notepad4j.entity;
 
 import java.awt.*;
 
-public class LableTextArea {
+public class LabelTextArea {
 
     private final Label label;
     private final TextArea textArea;
 
-    public LableTextArea(Panel panel) {
+    public LabelTextArea(Panel panel) {
         this.label = createLabel(panel);
         this.textArea = createTextArea(panel);
     }

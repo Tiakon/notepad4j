@@ -3,9 +3,7 @@ package cn.tiakon.notepad4j.entity.menubar;
 import java.awt.*;
 
 public class EditMenuInMenuBar {
-
     private final Menu editMenu;
-
     public EditMenuInMenuBar(Frame frame, TextArea textArea) {
         this.editMenu = new Menu("编辑");
         MenuItem undoItem = new MenuItem("撤销");
